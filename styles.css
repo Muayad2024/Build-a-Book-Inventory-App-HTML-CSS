@@ -1,0 +1,85 @@
+/* Basic styling for the table to make it look nice */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #b3e5fc;
+}
+
+/* 8. Three attribute selectors to target the row classes and set background-image */
+tr[class="read"] {
+    background-image: linear-gradient(to right, #d4edda, #c3e6cb);
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(to right, #f8f9fa, #e2e3e5);
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(to right, #fff3cd, #ffeeba);
+}
+
+/* 9. Set display property of each span element to inline-block */
+span {
+    display: inline-block;
+}
+
+/* 10. Target status spans in .to-read rows */
+tr[class="to-read"] span[class="status"] {
+    border: 2px solid #dc3545;
+    background-image: linear-gradient(to bottom, #f8d7da, #f5c6cb);
+}
+
+/* 11. Target status spans in .read rows */
+tr[class="read"] span[class="status"] {
+    border: 2px solid #28a745;
+    background-image: linear-gradient(to bottom, #d4edda, #c3e6cb);
+}
+
+/* 12. Target status spans in .in-progress rows */
+tr[class="in-progress"] span[class="status"] {
+    border: 2px solid #ffc107;
+    background-image: linear-gradient(to bottom, #fff3cd, #ffeeba);
+}
+
+/* 13. Target status spans and rate spans for height, width, and padding */
+span[class="status"],
+span[class^="rate"] {
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+}
+
+/* 14. Target the empty spans inside the rate spans */
+span[class^="rate"] > span {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 5px;
+    height: 15px;
+    width: 15px;
+    background-color: #f0f0f0;
+}
+
+/* 15. Target the first star in the "one" rating */
+span[class~="one"] span:first-child {
+    background-image: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+}
+
+/* 16. Target the first two stars in the "two" rating */
+span[class~="two"] span:nth-child(-n+2) {
+    background-image: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+}
+
+/* 17. Target all three stars in the "three" rating */
+span[class~="three"] span {
+    background-image: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+}
